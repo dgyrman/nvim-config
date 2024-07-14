@@ -41,13 +41,26 @@ lsp_zero.on_attach(function(_, bufnr)
 		info = '»'
 	})
 
+	-- CMP CONFIG
 	local cmp_action = lsp_zero.cmp_action()
 	cmp.setup({
+		window = {
+			completion = cmp.config.window.bordered(),
+			documentation = cmp.config.window.bordered(),
+		},
 		mapping = cmp.mapping.preset.insert({
 			['<CR>'] = cmp.mapping.confirm({ select = true }),
 			['<Tab>'] = cmp_action.luasnip_supertab(),
 			['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
 			['<C-Tab>'] = cmp_action.toggle_completion(),
+			['<Down>'] = cmp.mapping(function(fallback)
+				cmp.close()
+				fallback()
+			end, { "i" }),
+			['<Up>'] = cmp.mapping(function(fallback)
+				cmp.close()
+				fallback()
+			end, { "i" }),
 		}),
 		snippet = {
 			expand = function(args)
