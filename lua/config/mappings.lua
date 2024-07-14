@@ -1,16 +1,19 @@
 local telescope = require('telescope.builtin')
----@type vim.keymap
 local map = vim.keymap
 
--- NETRW
+-- OPEN NETRW
 map.set("n", "<leader>e", vim.cmd.Ex)
 
--- SHORTCUTS
-map.set("n", "<S-x>", vim.cmd.bd)
+-- CLOSE BUFFER
+map.set("n", "<S-x>", "<CMD>bd<CR>")
+
+-- VERTICAL NAVIGATION WITH CENTRING
 map.set("n", "<C-d>", "<C-d>zz")
 map.set("n", "<C-u>", "<C-u>zz")
-map.set("n", "<C-j>", ":m .+1<CR>==")
-map.set("n", "<C-k>", ":m .-2<CR>==")
+
+-- MOVING LINES
+map.set("v", "<S-j>", ":m '>+1<CR>gv=gv")
+map.set("v", "<S-k>", ":m '<-2<CR>gv=gv")
 
 -- TELESCOPE
 map.set("n", "<leader>t", telescope.find_files)
