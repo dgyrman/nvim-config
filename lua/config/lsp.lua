@@ -16,7 +16,10 @@ lsp_zero.on_attach(function(_, bufnr)
 	-- JUMP TO DECLARATION
 	vim.keymap.set('n', 'lgd', '<cmd>lua vim.lsp.buf.declaration()<cr>', { buffer = bufnr })
 
-	-- JUMP TO DECLARATION
+	-- JUMP TO DEFINITION
+	vim.keymap.set('n', 'lgD', '<cmd>lua vim.lsp.buf.definition()<cr>', { buffer = bufnr })
+
+	-- SHOW SIGNATURE
 	vim.keymap.set('n', 'lsh', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { buffer = bufnr })
 
 	-- NEXT DIAGNOSTICS
