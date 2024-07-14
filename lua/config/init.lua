@@ -1,6 +1,7 @@
 require('config.options')
 require('config.lazy')
 require('config.mappings')
-require('config.colorscheme')
 require('config.autocmd')
+require('config.editor')
+require('config.treesitter')
 require('config.lsp')
