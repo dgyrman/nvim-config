@@ -31,6 +31,15 @@ ayu.colorscheme()
 -- LAUNCHSCREEN
 mini.setup()
 
+-- FORMATTER
+require("conform").setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+		javascript = { { "prettier" } },
+		html = { { "prettier" } }
+	},
+})
+
 -- HAAH-ARPOOON AND SPIT ON THAT THAANG
 harpoon:setup()
 vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end)

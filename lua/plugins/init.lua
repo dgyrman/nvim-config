@@ -18,6 +18,10 @@ return {
 		tag = '0.1.8',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
+	{
+		'stevearc/conform.nvim',
+		opts = {},
+	},
 
 	-- LSP STUFF
 	{ 'williamboman/mason.nvim' },
@@ -26,5 +30,6 @@ return {
 	{ 'neovim/nvim-lspconfig' },
 	{ 'hrsh7th/cmp-nvim-lsp' },
 	{ 'hrsh7th/nvim-cmp' },
+	{ 'hrsh7th/cmp-path' },
 	{ 'L3MON4D3/LuaSnip' },
 }

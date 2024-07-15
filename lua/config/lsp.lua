@@ -47,6 +47,13 @@ lsp_zero.on_attach(function(_, bufnr)
 	-- CMP CONFIG
 	local cmp_action = lsp_zero.cmp_action()
 	cmp.setup({
+		sources = {
+			{ name = 'nvim_lsp' },
+			{ name = 'path' },
+		},
+
+		formatting = lsp_zero.cmp_format({ details = true }),
+
 		window = {
 			completion = cmp.config.window.bordered(),
 			documentation = cmp.config.window.bordered(),
@@ -81,5 +88,17 @@ mason_lspconfig.setup({
 		function(server_name)
 			require('lspconfig')[server_name].setup({})
 		end,
-	},
+
+		intelephense = function()
+			require('lspconfig').intelephense.setup({
+				settings = {
+					intelephense = {
+						format = {
+							braces = "k&r",
+						},
+					},
+				},
+			})
+		end,
+	}
 })
