@@ -2,7 +2,10 @@ local telescope = require('telescope.builtin')
 local map = vim.keymap
 
 -- OPEN NETRW
-map.set("n", "<leader>e", vim.cmd.Ex)
+map.set("n", "<leader>e", "<CMD>Ex<CR>")
+
+-- CLOSE NETRW
+map.set("n", "<leader>x", "<CMD>Rex<CR>")
 
 -- CLOSE BUFFER
 map.set("n", "<S-x>", "<CMD>bd<CR>")
