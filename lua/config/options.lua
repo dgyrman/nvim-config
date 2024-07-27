@@ -4,15 +4,13 @@ local opt = vim.opt
 -- SET LEADER KEY
 vim.g.mapleader = " "
 
--- CUSTOMIZE NETRW
-vim.g.netrw_banner = 0
-
 -- CONFIGURE EDITOR
-opt.colorcolumn = "100"
+opt.background = "dark"
+opt.colorcolumn = "120"
 opt.relativenumber = true
 opt.nu = true
 opt.fillchars = { eob = " " }
-opt.laststatus = 0
+opt.laststatus = 1
 opt.showmode = false
 opt.signcolumn = "yes:2"
 opt.shortmess = "I"
