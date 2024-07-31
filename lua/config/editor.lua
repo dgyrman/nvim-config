@@ -1,9 +1,15 @@
 local lualine = require("lualine")
 local conform = require("conform")
 local theme = require("vscode")
+local fzf_lua = require("fzf-lua")
 
-require("mini.starter").setup()
 require("gitsigns").setup()
+
+fzf_lua.setup({
+	winopts = {
+		backdrop = 100,
+	},
+})
 
 theme.setup({})
 theme.load()

@@ -1,9 +1,9 @@
 return {
 	-- FANCY STUFF
-	{ "echasnovski/mini.starter", version = "*" },
 	{ "Mofiqul/vscode.nvim" },
-	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "lewis6991/gitsigns.nvim" },
+	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = {} },
 
 	-- DOCSTRING GENERATOR
 	{ "kkoomen/vim-doge" },
@@ -12,6 +12,7 @@ return {
 	{ "stevearc/conform.nvim", opts = {} },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{ "nvim-telescope/telescope.nvim", tag = "0.1.8", dependencies = { "nvim-lua/plenary.nvim" } },
+	{ "ibhagwan/fzf-lua" },
 
 	-- LSP STUFF
 	{ "williamboman/mason.nvim" },

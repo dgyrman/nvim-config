@@ -10,9 +10,10 @@ map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 
 -- EDITING
+map("n", "<S-w>", ":w<CR>")
 map("n", "<S-v>", "_vg_")
 map("n", "$", "g_")
-map("n", "<S-x>", "<CMD>bd<CR>")
+map("n", "<S-x>", ":bd<CR>")
 map("n", "<C-j>", "mzJ`z")
 map("v", "<S-j>", ":m '>+1<CR>gv=gv")
 map("v", "<S-k>", ":m '<-2<CR>gv=gv")
@@ -21,6 +22,9 @@ map("v", "<S-k>", ":m '<-2<CR>gv=gv")
 map("n", "<leader>t", telescope.find_files)
 map("n", "<leader>ff", telescope.live_grep)
 map("n", "<leader>b", telescope.buffers)
+
+-- SEARCH/REPLACE
+map("n", "<S-r>", require("fzf-lua").grep)
 
 -- NVIM-DAP (Debugger)
 -- Will figure out later
